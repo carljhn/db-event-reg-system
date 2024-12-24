@@ -15,47 +15,42 @@ export function LoginForm({
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
+    <div className={cn("w-full", className)} {...props}>
+      <Card className="shadow-xl rounded-lg bg-[#2E2E2E]/60 backdrop-blur-sm h-[400px] flex flex-col border border-[#302F30]">
+        <CardHeader className="pb-4 flex-shrink-0">
+          <CardTitle className="text-2xl font-bold text-white text-gray-300">Welcome to PUP Gather!</CardTitle>
+          <CardDescription className="text-sm text-gray-400 pb-2 flex-shrink-0">
+            Please sign in or sign up below
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <form>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                />
-              </div>
+        <CardContent className="flex-grow flex flex-col justify-between">
+          <form className="flex flex-col h-full">
+            <div className="flex flex-col gap-4">
               <div className="grid gap-2">
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="email" className="text-sm font-medium text-gray-300">Email</Label>
                   <a
                     href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                    className="ml-auto inline-block text-sm text-gray-600 underline-offset-4 hover:underline"
                   >
-                    Forgot your password?
+                    Use Phone Number
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input 
+                  id="email"
+                  type="email"
+                  placeholder="pupian@example.com"
+                  required
+                  className="bg-white/10 text-white placeholder-gray-400" />
               </div>
-              <Button type="submit" className="w-full">
-                Login
-              </Button>
             </div>
-            <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <a href="#" className="underline underline-offset-4">
-                Sign up
-              </a>
+            <div className="flex flex-col gap-4 mt-4">
+              <Button type="submit" className="w-full bg-white hover:hover:bg-white/80 text-black text-sm font-medium">
+                Continue with Email
+              </Button>
+              <Button variant="outline" className="w-full bg-[#DAA520] text-black hover:bg-[#DAA520]/80 text-sm font-medium border-white/30">
+                Sign in with Google
+              </Button>
             </div>
           </form>
         </CardContent>
