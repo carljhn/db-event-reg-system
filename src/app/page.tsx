@@ -1,9 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+<<<<<<< Updated upstream
 import * as React from "react"
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator"
+=======
+>>>>>>> Stashed changes
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -12,6 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+<<<<<<< Updated upstream
 import {
   Tabs,
   TabsContent,
@@ -122,5 +126,40 @@ export default function page() {
        </div>
 
     
+=======
+export default function Home() {
+  return (
+    
+       <div>
+          <h1><b>Discover Events</b></h1>
+          <p>Explore popular events in the university, browse by category or check out what exciting events are waiting for you...</p>
+          <div>
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            orientation="horizontal"
+            className="w-full max-w-xs"
+          >
+            <CarouselContent className="-mt-1 h-[200px]">
+              {Array.from({ length: 5 }).map((_, index) => (
+                <CarouselItem key={index} className="pt-1 md:basis-1/2">
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <span className="text-3xl font-semibold">{index + 1}</span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+          </div>
+       </div>
+       
+>>>>>>> Stashed changes
   );
 }
