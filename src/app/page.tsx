@@ -31,25 +31,24 @@ export default function page() {
           </div>
         <div className="mx-80 p-2">
           <div>
-          <Carousel className="w-full max-w-xs"> <h2 className="text-red-700"><b>Popular Events</b></h2>
+          <Carousel className="w-full min-w-min"> <h2 className="text-red-700"><b>Popular Events</b></h2>
           <CarouselContent>
                 
                   <CarouselItem className="md:basis-1/1 lg:basis-1/2">
                     <div className="p-2">
-                      <Card className="min-w-min">
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <Card className="min-w-min h-52 ">
+                        <CardContent className="flex  items-center justify-center p-1">
                           <span className="text-2xl font-semibold">Event 1</span>
-                          <span className="text-2xl font-semibold">Sample Description</span>
                           
                         </CardContent>
                       </Card>
                     </div>
                   </CarouselItem>
 
-                  <CarouselItem className="md:basis-1/1 lg:basis-1/2">
+                  <CarouselItem className="md:basis-1/1 lg:basis-1/2 p-1">
                     <div className="p-1">
-                      <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <Card className="min-w-min h-52 ">
+                        <CardContent className="flex aspect-square items-center justify-center p-1">
                           <span className="text-2xl font-semibold">Event 2</span>
                         </CardContent>
                       </Card>
@@ -58,7 +57,7 @@ export default function page() {
 
                   <CarouselItem className="md:basis-1/1 lg:basis-1/2">
                     <div className="p-1">
-                      <Card>
+                      <Card className="min-w-min h-52 ">
                         <CardContent className="flex aspect-square items-center justify-center p-6">
                           <span className="text-2xl font-semibold">Event 3</span>
                         </CardContent>
@@ -76,7 +75,7 @@ export default function page() {
             <Separator className="my-3" />
             </div>
 
-            <div>
+            <div className="p-1">
               <Tabs defaultValue="account" className="w-[400px]"> 
                 <h3 className="text-red-700"><b>Explore PUP Branch Events</b></h3>
                   <TabsList>
@@ -84,12 +83,13 @@ export default function page() {
                     <TabsTrigger value="centralluzon">Central Luzon</TabsTrigger>
                     <TabsTrigger value="southluzon">South Luzon</TabsTrigger>
                   </TabsList>
-                  <TabsContent value="metromanila">
-                    <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                          <span className="text-2xl font-semibold">Paranaque City</span>
-                        </CardContent>
-                      </Card>
+                  <TabsContent value="metromanila" className="p-2">
+                    <Button variant="outline" className="pl-4">
+                      <Link href="#">Paranaque City</Link>
+                    </Button>
+                    <Button variant="outline" className="pl-4">
+                      <Link href="#">Quezon City</Link>
+                    </Button>
                   </TabsContent>
                   <TabsContent value="centralluzon">
                   <Card>
