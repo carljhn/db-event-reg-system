@@ -1,0 +1,48 @@
+'use client'
+
+import { useState } from 'react'
+import { StudentForm } from './components/StudentForm'
+import { AlumniForm } from './components/AlumniForm'
+import { FacultyForm } from './components/FacultyForm'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Layout } from './components/Layout'
+
+export default function RegistrationPage() {
+  const [userType, setUserType] = useState<'student' | 'alumni' | 'faculty' | null>(null)
+
+  const renderForm = () => {
+    switch (userType) {
+      case 'student':
+        return <StudentForm onBack={() => setUserType(null)} />
+      case 'alumni':
+        return <AlumniForm onBack={() => setUserType(null)} />
+      case 'faculty':
+        return <FacultyForm onBack={() => setUserType(null)} />
+      default:
+        return (
+          <div className="space-y-4">
+            <Button onClick={() => setUserType('student')} className="w-full bg-[#800000] hover:bg-[#600000]">Student Registration</Button>
+            <Button onClick={() => setUserType('alumni')} className="w-full bg-[#800000] hover:bg-[#600000]">Alumni Registration</Button>
+            <Button onClick={() => setUserType('faculty')} className="w-full bg-[#800000] hover:bg-[#600000]">Faculty/Admin Registration</Button>
+          </div>
+        )
+    }
+  }
+
+  return (
+    <Layout>
+      <div className="flex items-center justify-center">
+        <Card className="w-full max-w-md border-[#800000] border-t-4">
+          <CardHeader className="bg-gray-50">
+            <CardTitle className="text-2xl font-bold text-center text-[#800000]">University Registration</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-6">
+            {renderForm()}
+          </CardContent>
+        </Card>
+      </div>
+    </Layout>
+  )
+}
+
